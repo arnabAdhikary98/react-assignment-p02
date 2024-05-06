@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+  </body>
+
+  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+
+    let rootEle = document.getElementById('root')
+
+    // setting the flag variable value as 'true', change it to 'false' to see the cahnges
+    let flag = true
+
+    //creating a paragraph using BABEL library
+    let para01 = <p style={{color:"red", textAlign:"center", fontSize:"210%"}}>Seize the day</p>
+    let para02 = <p style={{color:"blue", textAlign:"center", fontSize:"210%"}}>Seize the Month</p>
+
+    //using ternary operator to imply conditional rendering
+    let conditionalRender = flag? para01 : para02;
+        
+    //showing/rendering it to the DOM using React
+    ReactDOM.createRoot(rootEle).render(conditionalRender)
+        
+  </script>
+</html>
